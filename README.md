@@ -16,7 +16,7 @@ This example uses [`webpack`](https://webpack.github.io/) and
 Excalibur is bundled via webpack into the output **bundle.js** file.
 
 
-** Please note:** 
+**Please note:** 
 
 When running `npm run dev` or `yarn dev` the webpack-dev-server
 generates your files virtually so you won't find them in your dist folder.
