@@ -1,15 +1,16 @@
 {
-  "name": "excalibur-seed",
+  "name": "excalibur-webpack",
   "version": "1.0.0",
-  "description": "a seed for excaliburjs projects",
+  "private": true,
+  "description": "a webpack starter for excaliburjs projects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open",
     "build": "webpack"
   },
-  "author": "Dylan Parker",
-  "license": "ISC",
+  "author": "Excalibur.js Team",
+  "license": "BSD-2-Clause",
   "devDependencies": {
     "html-webpack-plugin": "^3.0.6",
     "clean-webpack-plugin": "^0.1.19",
