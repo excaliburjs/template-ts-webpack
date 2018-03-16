@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebPackPlugin({
-      title: 'Excalibur Seed'
+      title: 'Excalibur Webpack Sample'
     })
   ]
 };
