@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run a development server",
+            "type": "npm",
+            "script": "start",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build a production version",
+            "type": "npm",
+            "script": "build",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,28 +1,10 @@
 # Excalibur TypeScript & Webpack Example
+This example uses [`Webpack`](https://webpack.github.io/) and [`ts-loader`](https://github.com/TypeStrong/ts-loader) module to compile the TypeScript.
 
-To run:
+Before you start, install the package via your beloved dependency manager through ```npm install``` or ```yarn install```.
 
-    npm install
-    npm run dev
+To start debugging your code, run ```start``` for the **development** script. It would compile Excalibur and a whole thing from the **/src** folder into the output **bundle.js** file. You will be able to see a result on ```localhost:8080``` and change your code "on the fly" without recompiling the bundle.
 
-    or
+When you are ready to go, compile a **production** version with ```build``` script or choose the appropriate task from VSCode, then check out the **/dist** folder.
 
-    yarn install
-    yarn dev
-
-
-This example uses [`webpack`](https://webpack.github.io/) and
-[`ts-loader`](https://github.com/TypeStrong/ts-loader) to compile the TypeScript.
-Excalibur is bundled via webpack into the output **bundle.js** file.
-
-
-**Please note:** 
-
-When running `npm run dev` or `yarn dev` the webpack-dev-server
-generates your files virtually so you won't find them in your dist folder.
-
-
-If you need the files for distribution or etc. use the command `npm run webpack` or
-`yarn webpack` instead.
-
-See **webpack.config.js** for the bundle configuration.
+**Please note:** when running `npm start` or `yarn start`, the webpack-dev-server generates your files virtually so you won't find them in your /dist folder.
