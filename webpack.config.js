@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpackMerge = require("webpack-merge");
 
@@ -31,7 +32,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     output: {
       filename: '[name].js',
       sourceMapFilename: '[file].map',
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, 'dist'),
     },
     optimization: {
       splitChunks: {
@@ -40,6 +41,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     },
     plugins: [
       new CleanWebpackPlugin(['dist']),
+      new CopyWebpackPlugin([ { from: 'src/images', to: 'images' } ]),
       new HtmlWebPackPlugin({
         title: 'Excalibur Webpack Sample'
       })
