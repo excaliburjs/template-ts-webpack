@@ -9,6 +9,7 @@
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server --env.mode development --open",
     "dev": "npm run webpack-dev-server",
+    "start" : "npm run dev",
     "build:dev": "npm run webpack -- --env.mode development",
     "build:prod": "npm run webpack -- --env.mode production"
   },
