@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpackMerge = require("webpack-merge");
 
@@ -17,12 +16,24 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
         {
           test: /\.js$/,
           use: ["source-map-loader"],
-          enforce: "pre"
+          exclude: [
+            path.resolve(__dirname,'node_modules/excalibur')
+          ],
+          enforce: "pre",
         },
         {
           test: /\.ts?$/,
           use: 'ts-loader',
           exclude: /node_modules/
+        },
+        {
+          test: /\.(png|jpg|bmp)$/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              emitFile: true
+            }
+          }]
         }
       ]
     },
@@ -41,7 +52,6 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     },
     plugins: [
       new CleanWebpackPlugin(['dist']),
-      new CopyWebpackPlugin([ { from: 'src/images', to: 'images' } ]),
       new HtmlWebPackPlugin({
         title: 'Excalibur Webpack Sample'
       })
