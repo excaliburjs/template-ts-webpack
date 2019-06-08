@@ -14,7 +14,7 @@ class Game extends ex.Engine {
 }
 
 const game = new Game();
-const levelOne = new LevelOne();
+const levelOne = new LevelOne(game);
 const player = new Player();
 player.addDrawing(Resources.Sword);
 
