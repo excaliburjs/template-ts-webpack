@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpackMerge = require("webpack-merge");
 
@@ -51,7 +51,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       }
     },
     plugins: [
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin({}),
       new HtmlWebPackPlugin({
         title: 'Excalibur Webpack Sample'
       })
