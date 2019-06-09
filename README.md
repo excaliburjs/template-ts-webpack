@@ -1,10 +1,20 @@
 # Excalibur TypeScript & Webpack Example
-This example uses [`Webpack`](https://webpack.github.io/) and [`ts-loader`](https://github.com/TypeStrong/ts-loader) module to compile the TypeScript.
 
-Before you start, install the package via your beloved dependency manager through ```npm install``` or ```yarn install```.
+This is a bare bones excalibur example in typescript & webpack
 
-To start debugging your code, run ```start``` for the **development** script. It would compile Excalibur and a whole thing from the **/src** folder into the output **bundle.js** file. You will be able to see a result on ```localhost:8080``` and change your code "on the fly" without recompiling the bundle.
+Other larger samples:
+* [Platformer](https://github.com/excaliburjs/sample-platformer)
+* [Shootem Up](https://github.com/excaliburjs/sample-shootemup)
 
-When you are ready to go, compile a **production** version with ```build``` script or choose the appropriate task from VSCode, then check out the **/dist** folder.
+## Running locally
 
-**Please note:** when running `npm start` or `yarn start`, the webpack-dev-server generates your files virtually so you won't find them in your /dist folder.
+* Using [nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com/)
+* Run the `npm install` to install dependencies
+* Run the `npm run dev` to run the development server to test out changes
+   * [Webpack](https://webpack.js.org/) will build the [typescript](https://www.typescriptlang.org/) into javascript
+   * [Webpack dev server](https://webpack.js.org/configuration/dev-server/) will host the script in a little server on http://localhost:8082/
+
+## Building bundles
+
+* Run `npm run build:dev` to produce javascript bundles for debugging in the `dist/` folder
+* Run `npm run build:prod` to produce javascript bundles for production (minified) in the `dist/` folder
