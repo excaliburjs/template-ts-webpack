@@ -1,5 +1,5 @@
 sudo: false
-lang: node_js
+language: node_js
 node_js:
 - '10'
 cache:
