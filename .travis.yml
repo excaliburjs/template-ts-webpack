@@ -8,4 +8,5 @@ cache:
     - node_cache
     - $HOME/.npm
 script:
-  - npm run all
+  - npm run build:dev
+  - npm run build:prod
