@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpackMerge = require("webpack-merge");
 
@@ -25,6 +26,11 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
           test: /\.tsx?$/,
           use: 'ts-loader',
           exclude: /node_modules/
+        },
+        {
+          test: /\.json$/,
+          use: 'file-loader',
+          type: 'javascript/auto'
         },
         {
           test: /\.(png|jpg|bmp)$/,
@@ -54,7 +60,10 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       new CleanWebpackPlugin({}),
       new HtmlWebPackPlugin({
         title: 'Excalibur Webpack Sample'
-      })
+      }),
+      new CopyPlugin([
+        { from: './src/assets/tilemap.png', to: './tilemap.png' },
+      ]),
     ]
   },
   modeConfig(mode)

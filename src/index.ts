@@ -1,7 +1,7 @@
-import * as ex from 'excalibur';
-import { LevelOne } from './scenes/level-one/level-one';
-import { Player } from './actors/player/player';
-import { Resources } from './resources';
+import * as ex from "excalibur";
+import { LevelOne } from "./scenes/level-one/level-one";
+import { Player } from "./actors/player/player";
+import { Resources } from "./resources";
 
 class Game extends ex.Engine {
   constructor() {
@@ -20,8 +20,7 @@ player.addDrawing(Resources.Sword);
 
 levelOne.add(player);
 
-game.add('levelOne', levelOne);
-
+game.add("levelOne", levelOne);
 
 let loader = new ex.Loader();
 for (let key in Resources) {
@@ -29,5 +28,9 @@ for (let key in Resources) {
 }
 
 game.start(loader).then(() => {
-  game.goToScene('levelOne');
+  game.goToScene("levelOne");
+
+  const map = Resources.Map.getTileMap();
+
+  game.add(map);
 });
