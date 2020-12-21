@@ -5,6 +5,7 @@ const http = require('http');
 const PNG = require('pngjs').PNG;
 const pixelmatch = require('pixelmatch');
 const puppeteer = require('puppeteer');
+process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 const file = new(static.Server)('./dist');
 const server = http.createServer(function (req, res) {
@@ -18,17 +19,23 @@ function imageMatch(expectedFile, actualFile) {
     const {width, height} = expected;
     const diff = new PNG({width, height});
     const pixelDiff = pixelmatch(expected.data, actual.data, diff.data, width, height, {threshold: 0.1});
-
+    
     if (pixelDiff > 0) {
         console.error(`Image ${expectedFile} did not match acutal ${actualFile}, ${pixelDiff} different!`);
-        fs.writeFileSync('diff-'+actualFile, PNG.sync.write(diff))
+        const diffImage = PNG.sync.write(diff);
+        console.log('Diff image: ', 'data:image/png;base64,' + diffImage.toString('base64'));
+        fs.writeFileSync('diff-'+actualFile, diffImage)
         process.exit(1);
     }
 }
 
 return (async () => {
     try {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            args: [
+              '--window-size=800,600',
+            ],
+          });
         const page = await browser.newPage();
         await page.goto('http://localhost:8080/index.html')
         
