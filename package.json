@@ -7,10 +7,10 @@
   "scripts": {
     "test": "npm run build:prod && node ./test/test.js",
     "webpack": "webpack",
-    "dev": "webpack serve --open --env.mode development",
+    "dev": "webpack serve --config webpack.development.js",
     "start": "npm run dev",
-    "build:dev": "webpack --env.mode development",
-    "build:prod": "webpack --env.mode production"
+    "build:dev": "webpack --config webpack.development.js",
+    "build:prod": "webpack --config webpack.production.js"
   },
   "author": "Excalibur.js Team",
   "license": "BSD-2-Clause",
