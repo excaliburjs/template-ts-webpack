@@ -1,5 +1,5 @@
 import * as ex from 'excalibur';
-const sword = require('./images/sword.png');
+import sword from './images/sword.png';
 
 let Resources = {
     Sword: new ex.Texture(sword)
