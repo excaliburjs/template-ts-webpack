@@ -1,11 +1,10 @@
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env) => ({
-  plugins: [
-    new UglifyJSPlugin({
-        sourceMap: true
-    }),
-    new CompressionWebpackPlugin(),
-  ]
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
+  plugins: [new CompressionWebpackPlugin()],
 });
