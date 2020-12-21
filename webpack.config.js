@@ -11,6 +11,10 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     entry: './src/index.ts',
     mode,
     devtool: 'source-map',
+    node: {
+      Buffer: false,
+      process: false
+    },
     module: {
       rules: [
         {
@@ -28,12 +32,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
         },
         {
           test: /\.(png|jpg|bmp)$/,
-          use: [{
-            loader: 'file-loader',
-            options: {
-              emitFile: true
-            }
-          }]
+          type: 'asset/resource'
         }
       ]
     },
@@ -41,9 +40,7 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
       extensions: ['.tsx', '.ts', '.js']
     },
     output: {
-      filename: '[name].js',
       sourceMapFilename: '[file].map',
-      path: path.resolve(__dirname, 'dist'),
     },
     optimization: {
       splitChunks: {
