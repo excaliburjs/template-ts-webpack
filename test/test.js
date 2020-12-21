@@ -32,6 +32,7 @@ function imageMatch(expectedFile, actualFile) {
 return (async () => {
     try {
         const browser = await puppeteer.launch({
+            dumpio: true,
             args: [
               '--window-size=800,600',
             ],
