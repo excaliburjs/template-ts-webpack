@@ -40,6 +40,7 @@ return (async () => {
         await page.goto('http://localhost:8080/')
         
         await page.waitForSelector('#excalibur-play', {visible: true});
+        await page.waitForTimeout(1000); // give it a second
         await page.screenshot({path: 'loaded.png'});
         
         const start = await page.$('#excalibur-play');
