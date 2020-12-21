@@ -20,7 +20,7 @@ function imageMatch(expectedFile, actualFile) {
     const diff = new PNG({width, height});
     const pixelDiff = pixelmatch(expected.data, actual.data, diff.data, width, height, {threshold: 0.1});
     
-    if (pixelDiff > 0) {
+    if (pixelDiff > 100) {
         console.error(`Image ${expectedFile} did not match acutal ${actualFile}, ${pixelDiff} different!`);
         const diffImage = PNG.sync.write(diff);
         console.log('Diff image: ', 'data:image/png;base64,' + diffImage.toString('base64'));
