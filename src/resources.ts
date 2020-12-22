@@ -5,4 +5,6 @@ let Resources = {
     Sword: new ex.Texture(sword)
 }
 
+console.log(sword);
+
 export { Resources }

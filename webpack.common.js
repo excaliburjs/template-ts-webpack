@@ -4,13 +4,19 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
+  target: "web",
   output: {
+    filename: '[name].js',
     sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, "dist"),
   },
   devtool: "source-map",
   module: {
     rules: [
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
       {
         test: /\.js$/,
         use: ["source-map-loader"],
@@ -21,10 +27,6 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
       },
     ],
   },
@@ -37,7 +39,7 @@ module.exports = {
     },
   },
   plugins: [
-    new CleanWebpackPlugin({}),
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       title: "Excalibur Webpack Sample",
     }),
