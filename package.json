@@ -7,18 +7,16 @@
   "scripts": {
     "test": "npm run build:prod && node ./test/test.js",
     "webpack": "webpack",
-    "webpack-dev-server": "webpack-dev-server --env.mode development --open",
-    "dev": "npm run webpack-dev-server",
+    "dev": "webpack serve --config webpack.development.js",
     "start": "npm run dev",
-    "build:dev": "npm run webpack -- --env.mode development",
-    "build:prod": "npm run webpack -- --env.mode production"
+    "build:dev": "webpack --config webpack.development.js",
+    "build:prod": "webpack --config webpack.production.js"
   },
   "author": "Excalibur.js Team",
   "license": "BSD-2-Clause",
   "devDependencies": {
     "clean-webpack-plugin": "3.0.0",
-    "compression-webpack-plugin": "5.0.2",
-    "file-loader": "6.2.0",
+    "compression-webpack-plugin": "7.1.0",
     "html-webpack-plugin": "4.5.0",
     "node-static": "0.7.11",
     "pixelmatch": "5.2.1",
@@ -27,11 +25,11 @@
     "source-map-loader": "1.1.3",
     "ts-loader": "8.0.12",
     "typescript": "4.1.3",
-    "uglifyjs-webpack-plugin": "2.2.0",
-    "webpack": "4.44.2",
-    "webpack-cli": "3.3.12",
+    "terser-webpack-plugin": "5.0.3",
+    "webpack": "5.11.0",
+    "webpack-cli": "4.2.0",
     "webpack-dev-server": "3.11.0",
-    "webpack-merge": "4.2.2"
+    "webpack-merge": "5.7.2"
   },
   "dependencies": {
     "excalibur": "0.24.5"

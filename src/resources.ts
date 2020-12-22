@@ -1,8 +1,12 @@
-import * as ex from 'excalibur';
+import { Texture } from 'excalibur';
 import sword from './images/sword.png';
 
-let Resources = {
-    Sword: new ex.Texture(sword)
+/**
+ * Default global resource dictionary. This gets loaded immediately
+ * and holds available assets for the game.
+ */
+const Resources = {
+    Sword: new Texture(sword)
 }
 
 export { Resources }

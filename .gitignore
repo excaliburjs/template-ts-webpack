@@ -1,10 +1,5 @@
 # Generated files
-bundle.js
-index.js
-loaded.png
-play.png
-diff-*.png
-dist/*
+dist/
 
 # Logs
 logs
