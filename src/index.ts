@@ -3,31 +3,34 @@ import { LevelOne } from './scenes/level-one/level-one';
 import { Player } from './actors/player/player';
 import { Resources } from './resources';
 
+/**
+ * Managed game class
+ */
 class Game extends Engine {
+  private player: Player;
+  private levelOne: LevelOne;
+
   constructor() {
-    super({ width: 800, height: 600, displayMode: DisplayMode.FullScreen });
+    super({ displayMode: DisplayMode.FullScreen });
   }
 
-  public start(loader: Loader) {
+  public start() {
+
+    // Create new scene with a player
+    this.levelOne = new LevelOne(this);
+    this.player = new Player();
+    this.levelOne.add(this.player);
+
+    game.add('levelOne', this.levelOne);
+
+    // Automatically load all default resources
+    const loader = new Loader(Object.values(Resources));
+
     return super.start(loader);
   }
 }
 
 const game = new Game();
-const levelOne = new LevelOne(game);
-const player = new Player();
-player.addDrawing(Resources.Sword);
-
-levelOne.add(player);
-
-game.add('levelOne', levelOne);
-
-
-let loader = new Loader();
-for (let key in Resources) {
-  loader.addResource(Resources[key]);
-}
-
-game.start(loader).then(() => {
+game.start().then(() => {
   game.goToScene('levelOne');
-});
+})
