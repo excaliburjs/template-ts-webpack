@@ -33,4 +33,4 @@ class Game extends Engine {
 const game = new Game();
 game.start().then(() => {
   game.goToScene('levelOne');
-})
+});
