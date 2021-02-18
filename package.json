@@ -17,7 +17,7 @@
   "devDependencies": {
     "clean-webpack-plugin": "3.0.0",
     "compression-webpack-plugin": "7.1.2",
-    "html-webpack-plugin": "4.5.1",
+    "html-webpack-plugin": "4.5.2",
     "node-static": "0.7.11",
     "pixelmatch": "5.2.1",
     "pngjs": "6.0.0",
