@@ -12,6 +12,6 @@ export class Player extends Actor {
   }
 
   onInitialize() {
-    this.addDrawing(Resources.Sword);
+    this.graphics.use(Resources.Sword.toSprite());
   }
 }

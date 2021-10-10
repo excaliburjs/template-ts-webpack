@@ -11,13 +11,13 @@ class Game extends Engine {
   private levelOne: LevelOne;
 
   constructor() {
-    super({ displayMode: DisplayMode.FullScreen });
+    super({ displayMode: DisplayMode.FitScreen });
   }
 
   public start() {
 
     // Create new scene with a player
-    this.levelOne = new LevelOne(this);
+    this.levelOne = new LevelOne();
     this.player = new Player();
     this.levelOne.add(this.player);
 

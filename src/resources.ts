@@ -1,4 +1,4 @@
-import { Texture } from 'excalibur';
+import { ImageSource } from 'excalibur';
 import sword from './images/sword.png';
 
 /**
@@ -6,7 +6,7 @@ import sword from './images/sword.png';
  * and holds available assets for the game.
  */
 const Resources = {
-    Sword: new Texture(sword)
+    Sword: new ImageSource(sword)
 }
 
 export { Resources }
