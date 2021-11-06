@@ -29,6 +29,6 @@
     "webpack-merge": "5.8.0"
   },
   "dependencies": {
-    "excalibur": "0.25.0"
+    "excalibur": "0.25.1"
   }
 }
