@@ -15,7 +15,7 @@
   "author": "Excalibur.js Team",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "clean-webpack-plugin": "3.0.0",
+    "clean-webpack-plugin": "4.0.0",
     "compression-webpack-plugin": "7.1.2",
     "html-webpack-plugin": "5.5.0",
     "@excaliburjs/testing": "0.25.0",
