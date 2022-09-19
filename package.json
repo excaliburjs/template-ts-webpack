@@ -20,7 +20,7 @@
     "html-webpack-plugin": "5.5.0",
     "@excaliburjs/testing": "0.25.1",
     "source-map-loader": "2.0.2",
-    "ts-loader": "9.3.1",
+    "ts-loader": "9.4.0",
     "typescript": "4.8.3",
     "terser-webpack-plugin": "5.3.6",
     "webpack": "5.74.0",
