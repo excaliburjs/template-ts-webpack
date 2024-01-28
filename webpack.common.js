@@ -42,6 +42,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       title: "Excalibur Webpack Sample",
+      template: 'index.html',
+      inject: 'body'
     }),
   ],
 };
