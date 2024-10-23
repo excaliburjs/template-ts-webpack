@@ -17,7 +17,7 @@
   "devDependencies": {
     "clean-webpack-plugin": "4.0.0",
     "compression-webpack-plugin": "11.1.0",
-    "html-webpack-plugin": "5.6.2",
+    "html-webpack-plugin": "5.6.3",
     "@excaliburjs/testing": "0.26.0",
     "source-map-loader": "5.0.0",
     "ts-loader": "9.5.1",
