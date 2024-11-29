@@ -33,6 +33,6 @@
     "serve": "14.2.4"
   },
   "dependencies": {
-    "excalibur": "0.30.0-alpha.1271"
+    "excalibur": "0.30.0-alpha.1274"
   }
 }
