@@ -30,7 +30,7 @@
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "5.2.2",
     "webpack-merge": "6.0.1",
-    "serve": "14.2.4"
+    "serve": "14.2.5"
   },
   "dependencies": {
     "excalibur": "0.30.0-alpha.1295"
