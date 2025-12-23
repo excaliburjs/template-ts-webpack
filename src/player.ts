@@ -44,10 +44,10 @@ export class Player extends Actor {
     // Actions are useful for scripting common behavior, for example patrolling enemies
     this.actions.delay(2000);
     this.actions.repeatForever(ctx => {
-      ctx.moveBy({offset: vec(100, 0), durationMs: 1000});
-      ctx.moveBy({offset: vec(0, 100), durationMs: 1000});
-      ctx.moveBy({offset: vec(-100, 0), durationMs: 1000});
-      ctx.moveBy({offset: vec(0, -100), durationMs: 1000});
+      ctx.moveBy({offset: vec(100, 0), duration: 1000});
+      ctx.moveBy({offset: vec(0, 100), duration: 1000});
+      ctx.moveBy({offset: vec(-100, 0), duration: 1000});
+      ctx.moveBy({offset: vec(0, -100), duration: 1000});
     });
 
     // Sometimes you want to click on an actor!
