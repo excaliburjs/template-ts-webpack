@@ -10,6 +10,7 @@
     "webpack": "webpack",
     "dev": "webpack serve --config webpack.development.js",
     "start": "npm run dev",
+    "build": "npm run build:prod",
     "build:dev": "webpack --config webpack.development.js",
     "build:prod": "webpack --config webpack.production.js",
     "serve": "serve dist"
@@ -33,6 +34,6 @@
     "serve": "14.2.5"
   },
   "dependencies": {
-    "excalibur": "0.30.0-alpha.1295"
+    "excalibur": "~0.32.0"
   }
 }
