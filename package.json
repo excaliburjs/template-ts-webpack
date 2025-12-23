@@ -10,6 +10,7 @@
     "webpack": "webpack",
     "dev": "webpack serve --config webpack.development.js",
     "start": "npm run dev",
+    "build": "npm run build:prod",
     "build:dev": "webpack --config webpack.development.js",
     "build:prod": "webpack --config webpack.production.js",
     "serve": "serve dist"
