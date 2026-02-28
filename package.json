@@ -19,7 +19,7 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "@playwright/test": "^1.49.0",
-    "@types/node": "^22.10.0",
+    "@types/node": "^24.0.0",
     "clean-webpack-plugin": "4.0.0",
     "compression-webpack-plugin": "11.1.0",
     "html-webpack-plugin": "5.6.6",
