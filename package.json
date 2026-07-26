@@ -24,7 +24,7 @@
     "compression-webpack-plugin": "11.1.0",
     "html-webpack-plugin": "5.6.8",
     "source-map-loader": "5.0.0",
-    "ts-loader": "9.6.0",
+    "ts-loader": "9.6.2",
     "typescript": "5.9.3",
     "terser-webpack-plugin": "5.6.1",
     "webpack": "5.107.2",
