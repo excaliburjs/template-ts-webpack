@@ -19,6 +19,11 @@ jobs:
       with:
         node-version: 'lts/*'
     - run: npm ci
+    # Type-check before the expensive browser install: this gate is what catches
+    # v1 API removals and options-bag typos (e.g. moveBy durationMs) that the
+    # bundler would otherwise transpile away silently.
+    - name: Type check
+      run: npm run typecheck
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - run: npm test
