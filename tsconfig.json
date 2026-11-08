@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    // Skips type-checking .d.ts files in node_modules, not your own code.
+    // Required today: excalibur's shipped typings reference AddEvent/RemoveEvent
+    // without their required type argument (entity.d.ts), which fails tsc.
+    // Can be removed once that is fixed upstream.
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "moduleResolution": "node10",

@@ -8,15 +8,24 @@ import { defineConfig, devices } from '@playwright/test';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+// The port is env-driven so several checkouts of this template (or other excalibur
+// templates) can run their suites side by side without silently attaching to each
+// other's `serve` process via `reuseExistingServer`. CI leaves EX_E2E_PORT unset and
+// gets the historical default of 3000.
+const port = Number(process.env.EX_E2E_PORT ?? 3000);
+const baseURL = `http://localhost:${port}`;
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
   testDir: './tests',
   webServer: {
-    command: 'npm run serve',
+    // Deliberately serves the *built* output (`serve dist`) rather than the webpack dev
+    // server: exercising the production bundle is the point of a template smoke test.
+    command: `npm run serve -- --listen ${port}`,
     timeout: 240 * 1000, // linux takes a long time
-    url: 'http://localhost:3000',
+    url: baseURL,
     reuseExistingServer: !process.env.CI,
     stdout: 'ignore',
     stderr: 'pipe',
@@ -34,7 +43,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -77,11 +86,4 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
 });
